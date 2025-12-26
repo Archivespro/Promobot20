@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+temp_photo.jpg
+result_image.jpg
+result_video.mp4
+tasks.json
+uploads/
