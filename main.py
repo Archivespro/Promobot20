@@ -129,7 +129,8 @@ async def main():
     app.router.add_post('/webhook', partner_webhook)
     runner = web.AppRunner(app, client_max_size=100*1024*1024)  # 100MB for large files
     await runner.setup()
-    site = web.TCPSite(runner, '0.0.0.0', 8081)
+    port = int(os.getenv('PORT', 8081))
+    site = web.TCPSite(runner, '0.0.0.0', port)
     await site.start()
     print("Сервер вебхуков запущен на http://0.0.0.0:8081")
 
